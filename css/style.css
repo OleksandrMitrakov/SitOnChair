@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, Verdana, sans-serif;
+    height: 100%;
+}
+
 @font-face {
     font-family: 'mukta_maheesemibold';
     src: url('../fonts/muktamahee-semibold.woff2') format('woff2'),
@@ -16,11 +22,6 @@
 header {
     background: black;
     height: 50px;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Verdana, sans-serif;
 }
 
 .container {
@@ -49,6 +50,7 @@ header h1 {
     padding-left: 2%;
     height: inherit;
 }
+
 
 .menu {
     float: right;
@@ -89,6 +91,18 @@ header h1 {
 .menu li:hover ul{
     visibility: visible;
     opacity: 1;
+    margin-top: 16px;
+    transition: opacity 500ms ease-in-out 0.1s;
+}
+
+.menu li:hover ul:before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 40px;
+    border: 20px solid transparent;
+    border-bottom: 20px solid black;
+
 }
 
 .menu li li{
@@ -98,13 +112,13 @@ header h1 {
 
 /*END  Header -----------------------------------------------*/
 
-/*Section----------------------------------------------------*/
+/*Slider----------------------------------------------------*/
 .top_gradient {
     height: 450px;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(94, 94, 94, 0.37));
 }
 
-.container .btn_prev {
+#btn_prev {
     float: left;
     width: 5%;
     font-size: 70px;
@@ -114,19 +128,29 @@ header h1 {
     margin-left: 5%;
 }
 
-.container img {
-    float: left;
-    margin-top: 4%;
-    margin-left: -7%;
-    width: 45%;
+#gallery {
+    width: 30%;
+    margin: 0px 135px;
+    position: relative;
+    top: 120px;
+}
 
+#gallery .photos img {
+    width: 100%;
+    display: none;
+}
+
+#gallery .photos img:first-child {
+    display: inline-block;
+    float: left;
 }
 
 .container .slider_text {
     float: left;
-    width: 35%;;
+    width: 40%;;
     margin-top: 10%;
     text-align: center;
+    margin-left: 4%;
 }
 
 .container .slider_text h1 {
@@ -153,7 +177,7 @@ span {
     color: #24B99F;
 }
 
-.container .btn_next {
+#btn_next {
     float: right;
     width: 5%;
     font-size: 70px;
@@ -162,7 +186,7 @@ span {
     margin-top: 15%;
     margin-right: 5%;
 }
-/*END Section----------------------------------------------------*/
+/*END Slider----------------------------------------------------*/
 
 /*Catalog----------------------------------------------------*/
 
@@ -272,12 +296,12 @@ article {
     margin-top: 70px;
 }
 
-.cennik {
+.price {
     padding-top: 50px;
     font-size: 26px;
 }
 
-.cennik::after {
+.price::after {
     content: "";
     display: block;
     height: 7px;
@@ -455,13 +479,13 @@ input:checked + label:before {
     width: 280px;
 }
 
-.podumowanie {
+.summary {
     padding-top: 20px;
     font-size: 21px;
     text-align: right;
 }
 
-.podumowanie::after {
+.summary::after {
     content: "";
     display: block;
     height: 7px;
@@ -587,12 +611,12 @@ input:checked + label:before {
 /*-END KALKULATOR ---------------------------------------------------------------------------------------------*/
 /*FORM-----------------------------------------------------------*/
 
-.kontakt {
+.contact {
     padding-top: 80px;
     font-size: 26px;
 }
 
-.kontakt::after {
+.contact::after {
     content: "";
     display: block;
     height: 7px;
@@ -664,6 +688,7 @@ input[type="submit"] {
     color: white;
     font-size: 30px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -672,7 +697,7 @@ input[type="checkbox"] {
 
 label {
     color: rgba(155, 155, 155, 0.92);
-    cursor: all-scroll;
+    cursor: pointer;
     font-size: 25px;
     position: relative;
 }

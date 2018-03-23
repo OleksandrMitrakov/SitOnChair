@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>CodersLab</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/js.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
@@ -36,23 +37,32 @@
     <!--Slider -------------------------------- -->
     <section class="top_gradient">
         <div class="container">
-            <a href="#" class="btn_prev"><</a>
-            <img src="images/black_chair.png">
+            <a href="#" id="btn_prev"><</a>
+            <div id="gallery">
+                <div class="photos">
+                    <img src="images/1.png">
+                    <img src="images/2.png">
+                    <img src="images/3.png">
+                    <img src="images/4.png">
+                    <img src="images/5.png">
+                    <img src="images/6.png">
+                </div>
+            </div>
             <div class="slider_text">
                 <h1>SIT <span>ON</span> OUR <span>CHAIR</span></h1>
                 <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a,ultricies porta urna.</p>
                 <a href="#">ZOBACZ WIĘCEJ</a>
             </div>
-            <a href="#" class="btn_next">></a>
+            <a href="#" id="btn_next">></a>
         </div>
     </section>
     <!--Catalog -------------------------------- -->
         <div class="container clearfix">
-            <div class="first_box">
-                <p>Chair CLAIR</p>
+            <div class="first_box" id="divbox1">
+                <p id="pbox1">Chair CLAIR</p>
             </div>
-            <div class="second_box">
-                <p>Chair MARGARITA</p>
+            <div class="second_box" id="divbox2">
+                <p id="pbox2">Chair MARGARITA</p>
             </div>
             <div class="third_box">
                 <h2>Finds all inputs</h2>
@@ -62,39 +72,39 @@
     <!--Cennik -------------------------------- -->
     <article>
         <div class="container clearfix">
-            <p class="cennik">CENNIK</p>
-            <div class="box">
+            <p class="price">CENNIK</p>
+            <div class="box" id="pricebox1">
                 <div class="circle"></div>
-                <p class="type_plan">BASIC PLAN</p>
-                <p class="circle_price">85<sup>99 PLN/MSC</sup></p>
+                <p class="type_plan" id="type_plan1">BASIC PLAN</p>
+                <p class="circle_price" id="price_basic">85<sup>99 PLN/MSC</sup></p>
                 <div class="plan_options">
                     <p>Zakup towaru + dowóz</p>
                     <p>Serwis</p>
                 </div>
-                <a href="#">DOŁĄCZ</a>
+                <a href="#" id="add_btn1">DOŁĄCZ</a>
             </div>
-            <div class="box">
+            <div class="box" id="pricebox2">
                 <div class="circle"></div>
-                <p class="type_plan">STANDARD PLAN</p>
-                <p class="circle_price">95<sup>99 PLN/MSC</sup></p>
+                <p class="type_plan" id="type_plan2">STANDARD PLAN</p>
+                <p class="circle_price" id="price_standard">95<sup>99 PLN/MSC</sup></p>
                 <div class="plan_options">
                     <p>Zakup towaru + dowóz</p>
                     <p>Serwis</p>
                     <p>Gwarancja 5 lat</p>
                 </div>
-                <a href="#">DOŁĄCZ</a>
+                <a href="#" id="add_btn2">DOŁĄCZ</a>
             </div>
-            <div class="box">
+            <div class="box" id="pricebox3">
                 <div class="circle"></div>
-                <p class="type_plan">ADVANCE PLAN</p>
-                <p class="circle_price">211<sup>00 PLN/MSC</sup></p>
+                <p class="type_plan" id="type_plan3">ADVANCE PLAN</p>
+                <p class="circle_price" id="price_advance">211<sup>00 PLN/MSC</sup></p>
                 <div class="plan_options">
                     <p>Zakup towaru + dowóz</p>
                     <p>Serwis</p>
                     <p>Gwarancja 6 lat</p>
                     <p>Porady projektanta</p>
                 </div>
-                <a href="#">DOŁĄCZ</a>
+                <a href="#" id="add_btn3">DOŁĄCZ</a>
             </div>
         </div>
     </article>
@@ -144,7 +154,7 @@
             </section>
 
             <section class="summary_part inline">
-                <p class="podumowanie">PODSUMOWANIE</p>
+                <p class="summary">PODSUMOWANIE</p>
                 <div class="summary_panel">
                     <div class="panel_left">
                         <h4 class="title">Twój fotel</h4>
@@ -167,7 +177,7 @@
     </section>
     <!--FORM ----------------------------------->
     <div id="contact_form" class="container clearfix">
-        <p class="cennik">KONTAKT</p>
+        <p class="contact">KONTAKT</p>
         <form>
             <input type="text" name="name" placeholder="Imię"><br>
             <input type="email" name="e_mail" placeholder="email"><br>
@@ -189,10 +199,10 @@
                 <p>Copyright 2014 | All Rights Reserved. -Sit On Chair</p>
             </div>
             <div class="logos clearfix">
-                <img src="images/flickr.png">
-                <img src="images/vimeo.png">
-                <img src="images/pinterest.png">
-                <img src="images/twitter.png">
+                <a href="#"><img src="images/flickr.png"></a>
+                <a href="#"><img src="images/vimeo.png"></a>
+                <a href="#"><img src="images/pinterest.png"></a>
+                <a href="#"><img src="images/twitter.png"></a>
             </div>
             <div class="slogan">
                 <p>SIT <span>ON</span> CHAIR</p>
