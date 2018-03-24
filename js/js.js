@@ -22,102 +22,176 @@ document.addEventListener('DOMContentLoaded', function () {
 
         add_btn1 = document.getElementById('add_btn1'),
         add_btn2 = document.getElementById('add_btn2'),
-        add_btn3 = document.getElementById('add_btn3');
+        add_btn3 = document.getElementById('add_btn3'),
+
+        little_circle1 = document.getElementById('box_circle1'),
+        little_circle2 = document.getElementById('box_circle2'),
+        little_circle3 = document.getElementById('box_circle3'),
+
+        circle1 = document.querySelector('.circle1'),
+        circle2 = document.querySelector('.circle2'),
+        circle3 = document.querySelector('.circle3');
 
 
-        /*Slider------------------------------------------------------- */
+    /*Slider------------------------------------------------------- */
 
-        btn_prev.addEventListener('click', function (e) {
-            images[i].style.display = 'none';
-            i--;
-            if (i < 0) {
-                i = images.length - 1;
-            }
-            images[i].style.display = 'inline-block';
-            images[i].style.float = 'left';
-        });
+    btn_prev.addEventListener('click', function (e) {
+        images[i].style.display = 'none';
+        i--;
+        if (i < 0) {
+            i = images.length - 1;
+        }
+        images[i].style.display = 'inline-block';
+        images[i].style.float = 'left';
+    });
 
-        btn_next.addEventListener('click', function (e) {
-            images[i].style.display = 'none';
-            i++;
-            if (i>=images.length) {
-                i = 0;
-            }
-            images[i].style.display = 'inline-block';
-            images[i].style.float = 'left';
-        });
-
-
-        /*Hide and Show white rows with names on boxes in Catalog-------- */
-
-        divbox1.addEventListener('mouseover', function (e) {
-            pbox1.hidden = true;
-        })
-
-        divbox1.addEventListener('mouseout', function (e) {
-            pbox1.hidden = false;
-        })
-
-        divbox2.addEventListener('mouseover', function (e) {
-            pbox2.hidden = true;
-        })
-
-        divbox2.addEventListener('mouseout', function (e) {
-            pbox2.hidden = false;
-        })
+    btn_next.addEventListener('click', function (e) {
+        images[i].style.display = 'none';
+        i++;
+        if (i >= images.length) {
+            i = 0;
+        }
+        images[i].style.display = 'inline-block';
+        images[i].style.float = 'left';
+    });
 
 
-        /*Change Color of Price Labels when mouseover ------------------*/
+    /*Hide and Show white rows with names on boxes in Catalog-------- */
 
-        price_box1.addEventListener('mouseover', function (e) {
-            price_box1.style.backgroundColor = '#24B99F';
-            typePlan1.style.color = 'white';
-            price_basic.style.color = '#24B99F';
-            add_btn1.style.backgroundColor = 'white';
-            add_btn1.style.color = '#24B99F';
-        });
+    divbox1.addEventListener('mouseover', function (e) {
+        pbox1.hidden = true;
+    })
 
-        price_box1.addEventListener('mouseout', function (e) {
-            price_box1.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
-            typePlan1.style.color = '#24B99F';
-            price_basic.style.color = 'rgba(140, 146, 138, 0.62)';
-            add_btn1.style.backgroundColor = '#24B99F';
-            add_btn1.style.color = 'white';
-        })
+    divbox1.addEventListener('mouseout', function (e) {
+        pbox1.hidden = false;
+    })
 
-        price_box2.addEventListener('mouseover', function (e) {
-            price_box2.style.backgroundColor = '#24B99F';
-            typePlan2.style.color = 'white';
-            price_standard.style.color = '#24B99F';
-            add_btn2.style.backgroundColor = 'white';
-            add_btn2.style.color = '#24B99F';
-        });
+    divbox2.addEventListener('mouseover', function (e) {
+        pbox2.hidden = true;
+    })
 
-        price_box2.addEventListener('mouseout', function (e) {
-            price_box2.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
-            typePlan2.style.color = '#24B99F';
-            price_standard.style.color = 'rgba(140, 146, 138, 0.62)';
-            add_btn2.style.backgroundColor = '#24B99F';
-            add_btn2.style.color = 'white';
-        })
-
-        price_box3.addEventListener('mouseover', function (e) {
-            price_box3.style.backgroundColor = '#24B99F';
-            typePlan3.style.color = 'white';
-            price_advance.style.color = '#24B99F';
-            add_btn3.style.backgroundColor = 'white';
-            add_btn3.style.color = '#24B99F';
-        });
-
-        price_box3.addEventListener('mouseout', function (e) {
-            price_box3.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
-            typePlan3.style.color = '#24B99F';
-            price_advance.style.color = 'rgba(140, 146, 138, 0.62)';
-            add_btn3.style.backgroundColor = '#24B99F';
-            add_btn3.style.color = 'white';
-        })
+    divbox2.addEventListener('mouseout', function (e) {
+        pbox2.hidden = false;
+    })
 
 
+    /*Change Color of Price Labels when mouseover ------------------*/
+
+    price_box1.addEventListener('mouseover', function (e) {
+        price_box1.style.backgroundColor = '#24B99F';
+        typePlan1.style.color = 'white';
+        price_basic.style.color = '#24B99F';
+        price_basic.style.backgroundColor = 'white';
+        add_btn1.style.backgroundColor = 'white';
+        add_btn1.style.color = '#24B99F';
+        little_circle1.style.backgroundColor = '#24B99Fed';
+        little_circle1.style.border = 'none';
+        circle1.style.backgroundColor = 'white';
+    });
+
+    price_box1.addEventListener('mouseout', function (e) {
+        price_box1.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        typePlan1.style.color = '#24B99F';
+        price_basic.style.color = 'rgba(140, 146, 138, 0.62)';
+        price_basic.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        add_btn1.style.backgroundColor = '#24B99F';
+        add_btn1.style.color = 'white';
+        little_circle1.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        little_circle1.style.border = '1px solid rgba(185, 191, 183, 0.65)';
+        circle1.style.backgroundColor = 'rgba(186, 192, 184, 0.86)';
+    })
+
+    price_box2.addEventListener('mouseover', function (e) {
+        price_box2.style.backgroundColor = '#24B99F';
+        typePlan2.style.color = 'white';
+        price_standard.style.color = '#24B99F';
+        price_standard.style.backgroundColor = 'white';
+        add_btn2.style.backgroundColor = 'white';
+        add_btn2.style.color = '#24B99F';
+        little_circle2.style.backgroundColor = '#24B99Fed';
+        little_circle2.style.border = 'none';
+        circle2.style.backgroundColor = 'white';
+    });
+
+    price_box2.addEventListener('mouseout', function (e) {
+        price_box2.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        typePlan2.style.color = '#24B99F';
+        price_standard.style.color = 'rgba(140, 146, 138, 0.62)';
+        price_standard.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        add_btn2.style.backgroundColor = '#24B99F';
+        add_btn2.style.color = 'white';
+        little_circle2.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        little_circle2.style.border = '1px solid rgba(185, 191, 183, 0.65)';
+        circle2.style.backgroundColor = 'rgba(186, 192, 184, 0.86)';
+    })
+
+    price_box3.addEventListener('mouseover', function (e) {
+        price_box3.style.backgroundColor = '#24B99F';
+        typePlan3.style.color = 'white';
+        price_advance.style.color = '#24B99F';
+        price_advance.style.backgroundColor = 'white';
+        add_btn3.style.backgroundColor = 'white';
+        add_btn3.style.color = '#24B99F';
+        little_circle3.style.backgroundColor = '#24B99Fed';
+        little_circle3.style.border = 'none';
+        circle3.style.backgroundColor = 'white';
+    });
+
+    price_box3.addEventListener('mouseout', function (e) {
+        price_box3.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        typePlan3.style.color = '#24B99F';
+        price_advance.style.color = 'rgba(140, 146, 138, 0.62)';
+        price_advance.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        add_btn3.style.backgroundColor = '#24B99F';
+        add_btn3.style.color = 'white';
+        little_circle3.style.backgroundColor = 'rgba(244, 244, 244, 0.9)';
+        little_circle3.style.border = '1px solid rgba(185, 191, 183, 0.65)';
+        circle3.style.backgroundColor = 'rgba(186, 192, 184, 0.86)';
+    })
+
+    /*Drop down list in KALKULATOR area and Summary Table ------------------*/
+
+    var dropDownElements = document.querySelectorAll('.drop_down_list');
+    var allListArrowElements = document.getElementsByClassName('list_arrow');
+
+    for (var i = 0; i < dropDownElements.length; i++) {
+        //Used for open/close
+        var listArrowElements = dropDownElements[i].querySelectorAll('.list_arrow');
+        addListenersToOpenCloseArrows(listArrowElements);
+
+        var productLiElements = dropDownElements[i].querySelectorAll('.list_panel > li');
+        var labelElement = dropDownElements[i].querySelector('.list_label');
+
+        //Change label text
+        addListenersToCheckOptions(productLiElements, labelElement);
+    }
+
+    function addListenersToOpenCloseArrows(listArrowElements) {
+        for (var i = 0; i < listArrowElements.length; i++) {
+            listArrowElements[i].addEventListener('click', function (e) {
+                for (var j = 0; j < allListArrowElements.length; j++) {
+                    if (e.target.id === allListArrowElements[j].id) {
+                        continue;
+                    }
+                    var elementClassList = allListArrowElements[j].nextElementSibling.classList;
+                    if (elementClassList.contains('show_list')) {
+                        allListArrowElements[j].nextElementSibling.classList.remove('show_list');
+                    }
+                }
+                e.target.nextElementSibling.classList.toggle('show_list');
+            })
+        }
+    }
+
+    function addListenersToCheckOptions(productLiElements, labelElement) {
+        for (var i = 0; i < productLiElements.length; i++) {
+            productLiElements[i].addEventListener('click', function (e) {
+                labelElement.innerHTML = e.target.innerHTML;
+            });
+        }
+    }
 
 
-});
+
+    /* -------------------------------------------------------------------- */
+}); 
