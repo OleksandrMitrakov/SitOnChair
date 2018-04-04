@@ -1,0 +1,114 @@
+/* Menu Animation ------------------------------------------------*/
+
+nav {
+  text-align: right;
+}
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+nav ul > li {
+  float: left;
+  width: 150px;
+  height: 65px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+ul.drop-menu li a {
+  color: white;
+}
+
+ul.menu li > a {
+  color: white;
+  font-family: ralewayextrabold, sans-serif;
+}
+
+ul.drop-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.menu li:hover ul:before {
+  content: '';
+  position: absolute;
+  top: -35px;
+  left: 53px;
+  border: 20px solid transparent;
+  border-bottom: 20px solid black;
+}
+
+ul.drop-menu li {
+  font-size: 12px;
+  background: black;
+  color: white;
+  padding-top: 15px;
+  &:hover {
+    background: black;
+  }
+  &:last-child {
+    border-radius: 0px 0px 5px 5px;
+  }
+}
+
+//Default Trigger
+
+ul.drop-menu li {
+  display: none;
+}
+
+li:hover > ul.drop-menu li {
+  display: block;
+}
+
+li:hover > ul.drop-menu {
+  perspective: 1000px;
+
+  li {
+    opacity: 0;
+    transform-origin: top right;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation: {
+          name: menuReverse;
+          duration: 350ms;
+          delay: (200ms * $i) - 300;
+          transition-timing-function: ease-in-out;
+          fill-mode: forwards;
+        }
+
+      }
+    }
+  }
+}
+
+@keyframes menuReverse {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+
+  }
+  30% {
+    transform: rotateX(50deg);
+
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/*END Menu Animation -----------------------------------------------*/

@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             productLiElements[i].addEventListener('click', function (e) {
                 labelElement.innerHTML = e.target.innerHTML;
                 e.target.parentElement.classList.toggle('show_list');
+                e.target.parentElement.parentElement.firstElementChild.classList.toggle('choosed');
             });
         }
     }
@@ -203,8 +204,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function calculateFinalPrice() {
         var finalPrice = 0;
-        for(var j = 0; j < panelRight.children.length; j++) {
-            if(panelRight.children[j].textContent != '') {
+        for (var j = 0; j < panelRight.children.length; j++) {
+            if (panelRight.children[j].textContent != '') {
                 finalPrice = finalPrice + Number(panelRight.children[j].textContent);
             }
         }
