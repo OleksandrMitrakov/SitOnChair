@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>CodersLab</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/js.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -35,6 +34,7 @@
 </header>
 <!--Header -------------------------------- -->
 <!--Slider -------------------------------- -->
+<section class="top_gradient">
 <section class="top_gradient">
     <div class="container">
         <a href="#" id="btn_prev"><</a>
@@ -120,7 +120,7 @@
                 <div class="drop_down_list">
                     <span class="list_label">Wybierz rodzaj</span>
                     <span class="list_arrow" id="arrow_chair_type"></span>
-                    <ul class="list_panel">
+                    <ul class="list_panel chair_name">
                         <li data-price="250">Clair</li>
                         <li data-price="320">Margarita</li>
                         <li data-price="400">Selena</li>
@@ -129,7 +129,7 @@
                 <div class="drop_down_list">
                     <span class="list_label">Wybierz kolor</span>
                     <span class="list_arrow" id="arrow_chair_color"></span>
-                    <ul class="list_panel">
+                    <ul class="list_panel chair_colors">
                         <li data-price="20">Czerwony</li>
                         <li data-price="50">Czarny</li>
                         <li data-price="0">Pomarańczowy</li>
@@ -138,13 +138,13 @@
                 <div class="drop_down_list">
                     <span class="list_label">Wybierz materiał</span>
                     <span class="list_arrow" id="arrow_chair_material"></span>
-                    <ul class="list_panel">
+                    <ul class="list_panel chair_fabric">
                         <li data-price="100">Tkanina</li>
                         <li data-price="200">Skóra</li>
                     </ul>
                 </div>
                 <div class="checkbox_block">
-                    <input type="checkbox" id="check2" data-transport-price="200">
+                    <input type="checkbox" id="check2" data-transport-price="80">
                     <label for="check2" class="check2">Transport</label>
                 </div>
 
@@ -160,18 +160,18 @@
             <div class="summary_panel">
                 <div class="panel_left">
                     <h4 class="title">Twój fotel</h4>
-                    <span class="color">1</span>
-                    <span class="pattern">2</span>
-                    <span class="transport">3</span>
+                    <span class="color"></span>
+                    <span class="pattern"></span>
+                    <span class="transport"></span>
                 </div>
                 <div class="panel_right">
-                    <h4 class="title value">1</h4>
-                    <span class="color value">2</span>
-                    <span class="pattern value">3</span>
-                    <span class="transport value">4</span>
+                    <h4 class="title_value"></h4>
+                    <span class="color value"></span>
+                    <span class="pattern value"></span>
+                    <span class="transport value"></span>
                 </div>
                 <div class="sum_label">SUMA</div>
-                <div class="sum"><strong>5</strong></div>
+                <div class="sum"><strong></strong></div>
             </div>
             <a href="" class="green_button">Zamawiam</a>
         </section>
@@ -212,4 +212,5 @@
     </div>
 </footer>
 </body>
+<script src="js/js.js" type="text/javascript"></script>
 </html>
