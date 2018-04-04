@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         btn_prev = document.getElementById('btn_prev'),
         btn_next = document.getElementById('btn_next'),
         images = document.querySelectorAll('#gallery .photos img'),
-        i = 0,
+        k = 0,
         price_box1 = document.getElementById('pricebox1'),
         price_box2 = document.getElementById('pricebox2'),
         price_box3 = document.getElementById('pricebox3'),
@@ -32,27 +32,26 @@ document.addEventListener('DOMContentLoaded', function () {
         circle2 = document.querySelector('.circle2'),
         circle3 = document.querySelector('.circle3');
 
-
     /*Slider------------------------------------------------------- */
 
     btn_prev.addEventListener('click', function (e) {
-        images[i].style.display = 'none';
-        i--;
-        if (i < 0) {
-            i = images.length - 1;
+        images[k].style.display = 'none';
+        k--;
+        if (k < 0) {
+            k = images.length - 1;
         }
-        images[i].style.display = 'inline-block';
-        images[i].style.float = 'left';
+        images[k].style.display = 'inline-block';
+        images[k].style.float = 'left';
     });
 
     btn_next.addEventListener('click', function (e) {
-        images[i].style.display = 'none';
-        i++;
-        if (i >= images.length) {
-            i = 0;
+        images[k].style.display = 'none';
+        k++;
+        if (k >= images.length) {
+            k = 0;
         }
-        images[i].style.display = 'inline-block';
-        images[i].style.float = 'left';
+        images[k].style.display = 'inline-block';
+        images[k].style.float = 'left';
     });
 
 
@@ -153,6 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var dropDownElements = document.querySelectorAll('.drop_down_list');
     var allListArrowElements = document.getElementsByClassName('list_arrow');
+    var summaryColor = document.querySelector('.color');
+    console.log(summaryColor);
 
     for (var i = 0; i < dropDownElements.length; i++) {
         //Used for open/close
@@ -161,6 +162,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var productLiElements = dropDownElements[i].querySelectorAll('.list_panel > li');
         var labelElement = dropDownElements[i].querySelector('.list_label');
+        var summaryItemName = document.querySelector('.title');
+
 
         //Change label text
         addListenersToCheckOptions(productLiElements, labelElement);
@@ -187,10 +190,82 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < productLiElements.length; i++) {
             productLiElements[i].addEventListener('click', function (e) {
                 labelElement.innerHTML = e.target.innerHTML;
+                e.target.parentElement.classList.toggle('show_list');
             });
         }
     }
 
+    /* Summary */
+
+    var panelLeft = document.querySelector('.panel_left'),
+        panelRight = document.querySelector('.panel_right'),
+        sum = document.querySelector('.summary_panel .sum strong');
+
+    function calculateFinalPrice() {
+        var finalPrice = 0;
+        for(var j = 0; j < panelRight.children.length; j++) {
+            if(panelRight.children[j].textContent != '') {
+                finalPrice = finalPrice + Number(panelRight.children[j].textContent);
+            }
+        }
+        sum.textContent = finalPrice + ' zł';
+    }
+
+    var listItemsName = document.querySelectorAll('.chair_name li'),
+        listItemsFabric = document.querySelectorAll('.chair_fabric li'),
+        listItemsChairsColors = document.querySelectorAll('.chair_colors li'),
+        transport = document.querySelector('#check2'),
+
+        chairTitle = panelLeft.querySelector('h4'),
+        chairColor = panelLeft.querySelector('.color'),
+        chairPattern = panelLeft.querySelector('.pattern'),
+        chairTransport = panelLeft.querySelector('.transport'),
+
+        chairTitleValue = panelRight.querySelector('h4'),
+        chairColorValue = panelRight.querySelector('.color'),
+        chairPatternValue = panelRight.querySelector('.pattern'),
+        chairTransportValue = panelRight.querySelector('.transport');
+
+    listItemsName.forEach(function (value) {
+        value.addEventListener('click', function () {
+            chairTitle.innerText = this.innerText;
+            var chair_value1 = parseInt(this.dataset.price);
+            chairTitleValue.innerText = chair_value1;
+            calculateFinalPrice();
+        });
+    });
+
+    listItemsFabric.forEach(function (value) {
+        value.addEventListener('click', function () {
+            chairPattern.innerText = this.innerText;
+            var chair_value2 = parseInt(this.dataset.price);
+            chairPatternValue.innerText = chair_value2;
+            calculateFinalPrice();
+        });
+    });
+
+    listItemsChairsColors.forEach(function (value) {
+        value.addEventListener('click', function () {
+            chairColor.innerText = this.innerText;
+            var chair_value3 = parseInt(this.dataset.price);
+            chairColorValue.innerText = chair_value3;
+            calculateFinalPrice();
+        });
+    });
+
+    transport.addEventListener('change', function () {
+        if (transport.checked) {
+            chairTransport.innerText = "Transport";
+            var chair_value4 = parseInt(this.dataset.transportPrice);
+            chairTransportValue.innerText = chair_value4;
+            calculateFinalPrice();
+        } else {
+            chairTransport.innerText = "";
+            chair_value4 = "";
+            chairTransportValue.innerText = chair_value4;
+            calculateFinalPrice();
+        }
+    });
 
 
     /* -------------------------------------------------------------------- */
