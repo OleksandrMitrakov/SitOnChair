@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /*Slider------------------------------------------------------- */
 
     btn_prev.addEventListener('click', function (e) {
+        e.preventDefault();
         images[k].style.display = 'none';
         k--;
         if (k < 0) {
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     btn_next.addEventListener('click', function (e) {
+        e.preventDefault();
         images[k].style.display = 'none';
         k++;
         if (k >= images.length) {
@@ -57,21 +59,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /*Hide and Show white rows with names on boxes in Catalog-------- */
 
-    divbox1.addEventListener('mouseover', function (e) {
-        pbox1.hidden = true;
-    })
-
-    divbox1.addEventListener('mouseout', function (e) {
-        pbox1.hidden = false;
-    })
-
-    divbox2.addEventListener('mouseover', function (e) {
-        pbox2.hidden = true;
-    })
-
-    divbox2.addEventListener('mouseout', function (e) {
-        pbox2.hidden = false;
-    })
+    // divbox1.addEventListener('mouseover', function (e) {
+    //     pbox1.hidden = true;
+    // })
+    //
+    // divbox1.addEventListener('mouseout', function (e) {
+    //     pbox1.hidden = false;
+    // })
+    //
+    // divbox2.addEventListener('mouseover', function (e) {
+    //     pbox2.hidden = true;
+    // })
+    //
+    // divbox2.addEventListener('mouseout', function (e) {
+    //     pbox2.hidden = false;
+    // })
 
 
     /*Change Color of Price Labels when mouseover ------------------*/
@@ -191,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
             productLiElements[i].addEventListener('click', function (e) {
                 labelElement.innerHTML = e.target.innerHTML;
                 e.target.parentElement.classList.toggle('show_list');
-                e.target.parentElement.parentElement.firstElementChild.classList.toggle('choosed');
+                e.target.parentElement.parentElement.firstElementChild.classList.add('choosed');
             });
         }
     }
@@ -270,4 +272,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* -------------------------------------------------------------------- */
+    $("#divbox1").on('mouseover', () => {
+        let element = $("#pbox1");
+    let newElement = element.clone(true);
+    newElement.removeClass('no-watching')
+    element.before(newElement);
+    $(newElement).addClass('is-watching');
+    element.remove();
+})
+
+    $("#divbox1").on('mouseout', () => {
+        let element = $("#pbox1");
+    let newElement = element.clone(true);
+    newElement.removeClass('is-watching')
+    element.before(newElement);
+    $(newElement).addClass('no-watching');
+    element.remove();
+})
+
+    $("#divbox2").on('mouseover', () => {
+        let element = $("#pbox2");
+        let newElement = element.clone(true);
+        newElement.removeClass('no-watching')
+        element.before(newElement);
+        $(newElement).addClass('is-watching');
+        element.remove();
+    })
+
+    $("#divbox2").on('mouseout', () => {
+        let element = $("#pbox2");
+        let newElement = element.clone(true);
+        newElement.removeClass('is-watching')
+        element.before(newElement);
+        $(newElement).addClass('no-watching');
+        element.remove();
+    })
 }); 
