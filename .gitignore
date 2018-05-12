@@ -1,8 +1,5 @@
-//Node modules ignore
+#first line
+node_modules/
 /node_modules
-.idea/
-package-lock.json
-Kalkulator/
 node_modules/*
-.sass-cache/*
-.idea
+
