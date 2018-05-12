@@ -14,7 +14,7 @@ Website provides an animated menu, a slider, which is responsive to 'manual' tog
   <li>Vanilla JS</li>
 </ul>
 
-You can check my website here: https:
+You can check my website here: http://chairlandingpage.surge.sh/
 
 Thanks for coming :)
 
