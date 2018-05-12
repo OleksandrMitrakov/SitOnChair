@@ -29,9 +29,9 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node_modules/balanced-match/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="414">
-                <caret line="49" column="134" lean-forward="false" selection-start-line="49" selection-start-column="134" selection-end-line="49" selection-end-column="134" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="182">
+                <caret line="53" column="73" lean-forward="true" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -328,7 +328,7 @@
       <workItem from="1525793148950" duration="633000" />
       <workItem from="1525840669903" duration="692000" />
       <workItem from="1525879516107" duration="954000" />
-      <workItem from="1526154909073" duration="199000" />
+      <workItem from="1526154909073" duration="407000" />
     </task>
     <task id="LOCAL-00001" summary="title">
       <created>1523620805001</created>
@@ -341,7 +341,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100102000" />
+    <option name="totallyTimeSpent" value="100310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="69" width="1307" height="780" extended-state="6" />
@@ -838,9 +838,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/balanced-match/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="414">
-            <caret line="49" column="134" lean-forward="false" selection-start-line="49" selection-start-column="134" selection-end-line="49" selection-end-column="134" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="182">
+            <caret line="53" column="73" lean-forward="true" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
             <folding />
           </first_editor>
           <second_editor />
