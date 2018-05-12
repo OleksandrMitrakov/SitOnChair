@@ -2,3 +2,6 @@
 .idea/
 package-lock.json
 Kalkulator/
+node_modules/*
+.sass-cache/*
+.idea
